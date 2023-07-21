@@ -6,8 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./my-component.component.scss']
 })
 export class MyComponentComponent {
-//add app-my-component to app.component.html
   title = 'chatGPT-yc40041';
-      
+
 
 }
