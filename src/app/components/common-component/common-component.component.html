@@ -1,0 +1,24 @@
+<div>
+    <!-- generate p with text -->
+    <p>
+        <span [ngClass]="'required'" *ngIf="comp?.rule?.required">*</span>
+        {{comp?.label}}
+    </p>
+    <!-- generate input text  with input change event-->
+    <div [ngSwitch]="comp.type">
+        <div *ngSwitchCase="'textbox'">
+            <!-- generate textbox -->
+            <input type="text" [(ngModel)]="comp.value" (ngModelChange)="handleChange(comp.type,comp.key,comp.value)" />
+        </div>
+        <div *ngSwitchCase="'radio'">
+            <!-- generate radio according options-->
+            <div *ngFor="let option of comp.options">
+                <div [ngClass]="'radio-block'" [class.active]="radioValue===option.value"
+                    (click)="handleChange(comp.type,comp.key,option.value)">
+                    <div>{{option.label}}</div>
+                    <div>{{option.value}}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>

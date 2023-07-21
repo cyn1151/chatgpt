@@ -1,0 +1,20 @@
+<!-- generate div with className form-group -->
+<div class="form-group">
+    <!-- generate h1 with text add style padding-bottom:10 border-bottom:1px solid #ccc-->
+    <h1 style="padding-bottom:10px;border-bottom:1px solid #ccc">Pay Someone New</h1>
+    <!-- generate section element -->
+    <section class="flex" *ngFor="let section of metaData">
+        <!-- generate both div with classname left and right -->
+        <div class="left">
+            {{section?.section}}
+        </div>
+        <div class="right">
+            <app-common-component *ngFor="let comp of section.components" [comp]="comp" [outputData]="outputData"
+                (handleChangeEvent)="handleChangeEvent($event)"></app-common-component>
+        </div>
+    </section>
+
+    <!-- generate button with click event -->
+    <button [class.disabled]="!validButton" [ngStyle]="{float:'right',marginTop:'20px'}" (click)="handleSubmit()">Submit</button>
+
+</div>

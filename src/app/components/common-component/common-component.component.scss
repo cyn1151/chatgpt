@@ -1,0 +1,26 @@
+input,
+.radio-block {
+    width: 90%;
+    height: 30px;
+    border: 1px solid #ccc;
+}
+
+p {
+    margin: 10px 0 !important;
+}
+
+.radio-block {
+    padding: 10px;
+    height: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    &.active {
+        border: 1px solid blue;
+    }
+}
+
+.required {
+    color: red;
+}
